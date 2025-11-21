@@ -1,6 +1,9 @@
 {
   "name": "scott-dobson-music",
   "compatibility_date": "2024-09-23",
+  "assets": {
+    "directory": "./dist"
+  },
   "observability": {
     "enabled": true
   }
