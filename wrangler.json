@@ -2,6 +2,6 @@
   "name": "scott-dobson-music",
   "compatibility_date": "2024-11-21",
   "assets": {
-    "directory": "dist"
+    "directory": "./dist"
   }
 }
