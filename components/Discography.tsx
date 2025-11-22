@@ -1,26 +1,9 @@
-
 import React from 'react';
 import SectionTitle from './SectionTitle';
 import { SPOTIFY_ARTIST_ID } from '../constants';
+import { ExternalLink, Music, ArrowRight } from 'lucide-react';
 
 const Discography: React.FC = () => {
-  // We use dangerouslySetInnerHTML to ensure the iframe attributes (specifically 'allow' and 'referrerpolicy')
-  // are rendered exactly as required by the browser's security model for Encrypted Media (DRM).
-  // React can sometimes sanitize or malform strict security attributes.
-  const spotifyEmbedHtml = `
-    <iframe 
-      style="border-radius:12px" 
-      src="https://open.spotify.com/embed/artist/${SPOTIFY_ARTIST_ID}?utm_source=generator&theme=0" 
-      width="100%" 
-      height="450" 
-      frameBorder="0" 
-      allowfullscreen="" 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="eager"
-      referrerpolicy="strict-origin-when-cross-origin"
-    ></iframe>
-  `;
-
   return (
     <section id="discography" className="py-24 bg-slate-900 relative overflow-hidden">
       {/* Decorative background element */}
@@ -32,37 +15,67 @@ const Discography: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionTitle title="Official Discography" subtitle="Streaming Everywhere" />
         
-        <div className="w-full max-w-4xl mx-auto">
-          <div className="bg-black/40 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden border border-slate-800 p-1">
-             <div 
-               className="w-full"
-               dangerouslySetInnerHTML={{ __html: spotifyEmbedHtml }} 
-             />
-          </div>
-          
-          <div className="mt-4 text-center">
-            <p className="text-slate-500 text-xs italic mb-6">
-              * Playback may be limited to 30-second previews if you are not logged into Spotify Premium in this browser.
-            </p>
-          </div>
-          
-          <div className="text-center flex flex-col md:flex-row justify-center gap-4">
-            <a 
-              href={`https://open.spotify.com/artist/${SPOTIFY_ARTIST_ID}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 border border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-all duration-300 rounded-full font-bold tracking-wide uppercase text-sm"
-            >
-              Open in Spotify
-            </a>
-            <a 
-              href="https://suno.com/@scootied"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-all duration-300 rounded-full font-bold tracking-wide uppercase text-sm"
-            >
-              Explore Suno AI
-            </a>
+        <div className="w-full max-w-5xl mx-auto">
+          {/* Main Streaming Card */}
+          <div className="bg-gradient-to-br from-slate-900 to-black border border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+            
+            {/* Visual Side */}
+            <div className="md:w-2/5 relative min-h-[300px] md:min-h-full">
+              <img 
+                src="https://picsum.photos/seed/scottmusic/800/800?grayscale" 
+                alt="Latest Release" 
+                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent md:bg-gradient-to-r"></div>
+              <div className="absolute bottom-6 left-6">
+                <span className="bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-2 inline-block">
+                  On Spotify
+                </span>
+                <h3 className="text-2xl font-bold text-white leading-tight">Complete<br/>Collection</h3>
+              </div>
+            </div>
+
+            {/* Content Side */}
+            <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4">Experience the Music</h3>
+                <p className="text-slate-400 leading-relaxed text-lg">
+                  Dive into the complete discography. From atmospheric soundscapes to driving compositions, stream the full catalog in high fidelity directly on your preferred platform.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href={`https://open.spotify.com/artist/${SPOTIFY_ARTIST_ID}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group"
+                >
+                  <Music className="h-5 w-5" />
+                  <span>Listen on Spotify</span>
+                  <ArrowRight className="h-4 w-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                </a>
+                
+                <a 
+                  href="https://suno.com/@scootied"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 border border-slate-700"
+                >
+                  <ExternalLink className="h-5 w-5" />
+                  <span>Suno AI Sketches</span>
+                </a>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-slate-800/50 flex items-center justify-between text-sm text-slate-500">
+                <span>Latest releases available now</span>
+                <div className="flex gap-2">
+                  <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+                  <span>Streaming Live</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
