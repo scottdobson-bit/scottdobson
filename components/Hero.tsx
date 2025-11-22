@@ -33,8 +33,10 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#about" className="text-slate-400 hover:text-white transition-colors">
+      {/* Centering container */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        {/* Animation container */}
+        <a href="#about" className="block text-slate-400 hover:text-white transition-colors animate-bounce">
           <ChevronDown className="h-10 w-10" />
         </a>
       </div>
