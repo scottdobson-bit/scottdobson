@@ -1,3 +1,4 @@
+
 import { Album, SocialLink } from './types';
 
 export const ARTIST_NAME = "Scott Dobson";
@@ -5,50 +6,37 @@ export const SPOTIFY_ARTIST_ID = "54bJfCtUt7inbtQg07ZIdd";
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { platform: "Spotify", url: `https://open.spotify.com/artist/${SPOTIFY_ARTIST_ID}`, iconName: "spotify" },
+  { platform: "Suno (AI)", url: "https://suno.com/@scootied", iconName: "globe" },
   { platform: "Instagram", url: "#", iconName: "instagram" },
   { platform: "YouTube", url: "#", iconName: "youtube" },
-  { platform: "Twitter", url: "#", iconName: "twitter" },
 ];
 
-// NOTE: This array is now used primarily for the "Downloads" section to offer exclusive/demo tracks.
-// The main Discography section uses the Spotify Artist Embed.
+// NOTE: The main Discography is handled by the Spotify Embed in components/Discography.tsx.
+// This array is for the "Downloads" section, featuring exclusive content not found on streaming services.
 export const DISCOGRAPHY: Album[] = [
   {
-    id: "album-1",
-    title: "Echoes of the City (Demo)",
+    id: "ai-experiments",
+    title: "The Suno Archives (Vol. 1)",
+    year: 2024,
+    coverUrl: "https://picsum.photos/400/400?grayscale&blur=1",
+    description: "Generative sketches and algorithmic compositions created via Suno AI.",
+    spotifyAlbumId: "", 
+    tracks: [
+      { id: "s1", title: "Prompt: Neon Horizon", duration: "2:15", fileUrl: "#" },
+      { id: "s2", title: "Algorithmic Drift (Demo)", duration: "3:42", fileUrl: "#" },
+      { id: "s3", title: "Binary Soul", duration: "4:10", fileUrl: "#" },
+    ]
+  },
+  {
+    id: "human-sessions",
+    title: "Analog/Digital",
     year: 2023,
-    coverUrl: "https://picsum.photos/400/400?random=1",
-    description: "A gritty exploration of urban life through a fusion of jazz and electronic soundscapes.",
+    coverUrl: "https://picsum.photos/400/400?grayscale&random=2",
+    description: "Bridging the gap between traditional instrumentation and neural networks.",
     spotifyAlbumId: "", 
     tracks: [
-      { id: "t1", title: "Neon Rain", duration: "3:45", fileUrl: "#" },
-      { id: "t2", title: "Subway Dreams", duration: "4:12", fileUrl: "#" },
-      { id: "t3", title: "Midnight Coffee", duration: "2:58", fileUrl: "#" },
-    ]
-  },
-  {
-    id: "album-2",
-    title: "The Quiet Hours (Acoustic)",
-    year: 2021,
-    coverUrl: "https://picsum.photos/400/400?random=2",
-    description: "Acoustic sessions recorded in a remote cabin. Raw, emotional, and unfiltered.",
-    spotifyAlbumId: "", 
-    tracks: [
-      { id: "t4", title: "Timberline", duration: "3:30", fileUrl: "#" },
-      { id: "t5", title: "Fading Embers", duration: "4:05", fileUrl: "#" },
-    ]
-  },
-  {
-    id: "album-3",
-    title: "Analog Heart",
-    year: 2019,
-    coverUrl: "https://picsum.photos/400/400?random=3",
-    description: "Scott's debut album that started it all. Synth-pop anthems for the modern age.",
-    spotifyAlbumId: "", 
-    tracks: [
-      { id: "t6", title: "Circuit Breaker", duration: "3:15", fileUrl: "#" },
-      { id: "t7", title: "Digital Love", duration: "3:50", fileUrl: "#" },
-      { id: "t8", title: "Rewind", duration: "4:20", fileUrl: "#" },
+      { id: "l1", title: "Improvisation in A Minor", duration: "5:30", fileUrl: "#" },
+      { id: "l2", title: "Echoes (Raw Stem)", duration: "4:45", fileUrl: "#" },
     ]
   }
 ];

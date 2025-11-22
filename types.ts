@@ -1,3 +1,4 @@
+
 export interface Song {
   id: string;
   title: string;
@@ -19,5 +20,5 @@ export interface Album {
 export interface SocialLink {
   platform: string;
   url: string;
-  iconName: 'twitter' | 'instagram' | 'youtube' | 'spotify' | 'mail';
+  iconName: 'twitter' | 'instagram' | 'youtube' | 'spotify' | 'mail' | 'globe';
 }

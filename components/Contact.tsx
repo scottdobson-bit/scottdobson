@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import SectionTitle from './SectionTitle';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Instagram, Twitter, Youtube, Music, Globe, Mail } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
 const Contact: React.FC = () => {
@@ -15,6 +16,18 @@ const Contact: React.FC = () => {
       setIsSubmitted(false);
       setFormState({ name: '', email: '', message: '' });
     }, 3000);
+  };
+
+  const getIcon = (iconName: string) => {
+    switch(iconName) {
+      case 'instagram': return <Instagram className="h-5 w-5" />;
+      case 'twitter': return <Twitter className="h-5 w-5" />;
+      case 'youtube': return <Youtube className="h-5 w-5" />;
+      case 'spotify': return <Music className="h-5 w-5" />;
+      case 'globe': return <Globe className="h-5 w-5" />;
+      case 'mail': return <Mail className="h-5 w-5" />;
+      default: return <Globe className="h-5 w-5" />;
+    }
   };
 
   return (
@@ -39,8 +52,13 @@ const Contact: React.FC = () => {
                    <a 
                     key={link.platform} 
                     href={link.url} 
-                    className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors p-2 hover:bg-slate-900 rounded"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors p-2 hover:bg-slate-900 rounded group"
                    >
+                     <span className="group-hover:text-amber-500 transition-colors">
+                       {getIcon(link.iconName)}
+                     </span>
                      <span className="uppercase text-sm font-medium">{link.platform}</span>
                    </a>
                  ))}
