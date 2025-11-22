@@ -7,6 +7,7 @@ export const APPLE_MUSIC_ARTIST_URL = "https://music.apple.com/gb/artist/scott-d
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { platform: "Spotify", url: `https://open.spotify.com/artist/${SPOTIFY_ARTIST_ID}`, iconName: "spotify" },
-  { platform: "Suno (AI)", url: "https://suno.com/@scootied", iconName: "globe" },
+  { platform: "Apple Music", url: APPLE_MUSIC_ARTIST_URL, iconName: "applemusic" },
+  { platform: "Suno", url: "https://suno.com/@scootied", iconName: "globe" },
   { platform: "Facebook", url: "https://facebook.com/scottdobson", iconName: "facebook" },
 ];

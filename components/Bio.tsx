@@ -10,7 +10,7 @@ const Bio: React.FC = () => {
         <SectionTitle title="About The Artist" subtitle="Man & Machine" />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative group">
+          <div className="relative group w-full max-w-md mx-auto">
             <div className="absolute -inset-4 border-2 border-amber-500 opacity-20 transform translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
             <img 
               src="https://picsum.photos/seed/scottbio/800/1000?grayscale" 

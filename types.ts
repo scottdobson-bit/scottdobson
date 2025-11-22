@@ -20,5 +20,5 @@ export interface Album {
 export interface SocialLink {
   platform: string;
   url: string;
-  iconName: 'twitter' | 'instagram' | 'youtube' | 'spotify' | 'mail' | 'globe' | 'facebook';
+  iconName: 'twitter' | 'instagram' | 'youtube' | 'spotify' | 'mail' | 'globe' | 'facebook' | 'applemusic';
 }
