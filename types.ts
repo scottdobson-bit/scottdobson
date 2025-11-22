@@ -12,6 +12,7 @@ export interface Album {
   year: number;
   coverUrl: string;
   description: string;
+  spotifyAlbumId: string; // The ID from the Spotify Share URL
   tracks: Song[];
 }
 
