@@ -4,6 +4,23 @@ import SectionTitle from './SectionTitle';
 import { SPOTIFY_ARTIST_ID } from '../constants';
 
 const Discography: React.FC = () => {
+  // We use dangerouslySetInnerHTML to ensure the iframe attributes (specifically 'allow' and 'referrerpolicy')
+  // are rendered exactly as required by the browser's security model for Encrypted Media (DRM).
+  // React can sometimes sanitize or malform strict security attributes.
+  const spotifyEmbedHtml = `
+    <iframe 
+      style="border-radius:12px" 
+      src="https://open.spotify.com/embed/artist/${SPOTIFY_ARTIST_ID}?utm_source=generator&theme=0" 
+      width="100%" 
+      height="450" 
+      frameBorder="0" 
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="eager"
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  `;
+
   return (
     <section id="discography" className="py-24 bg-slate-900 relative overflow-hidden">
       {/* Decorative background element */}
@@ -15,29 +32,21 @@ const Discography: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionTitle title="Official Discography" subtitle="Streaming Everywhere" />
         
-        <div className="w-full max-w-5xl mx-auto">
+        <div className="w-full max-w-4xl mx-auto">
           <div className="bg-black/40 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden border border-slate-800 p-1">
-            {/* 
-               Spotify Artist Embed 
-               Fixes applied:
-               1. loading="eager" to ensure DRM scripts load immediately.
-               2. Removed 'frameBorder' (deprecated) in favor of style border: 0.
-               3. Added allowTransparency.
-            */}
-            <iframe 
-              style={{ borderRadius: '12px', border: 0 }} 
-              src={`https://open.spotify.com/embed/artist/${SPOTIFY_ARTIST_ID}?utm_source=generator`} 
-              width="100%" 
-              height="352" 
-              allowFullScreen 
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-              loading="eager"
-              title="Scott Dobson Spotify Player"
-              className="bg-slate-950 block"
-            ></iframe>
+             <div 
+               className="w-full"
+               dangerouslySetInnerHTML={{ __html: spotifyEmbedHtml }} 
+             />
           </div>
           
-          <div className="mt-8 text-center flex flex-col md:flex-row justify-center gap-4">
+          <div className="mt-4 text-center">
+            <p className="text-slate-500 text-xs italic mb-6">
+              * Playback may be limited to 30-second previews if you are not logged into Spotify Premium in this browser.
+            </p>
+          </div>
+          
+          <div className="text-center flex flex-col md:flex-row justify-center gap-4">
             <a 
               href={`https://open.spotify.com/artist/${SPOTIFY_ARTIST_ID}`}
               target="_blank"
