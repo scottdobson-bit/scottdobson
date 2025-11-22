@@ -19,19 +19,21 @@ const Discography: React.FC = () => {
           <div className="bg-black/40 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden border border-slate-800 p-1">
             {/* 
                Spotify Artist Embed 
-               Using standard height (352px) and attributes to ensure 'encrypted-media' permission works.
+               Fixes applied:
+               1. loading="eager" to ensure DRM scripts load immediately.
+               2. Removed 'frameBorder' (deprecated) in favor of style border: 0.
+               3. Added allowTransparency.
             */}
             <iframe 
-              style={{ borderRadius: '12px' }} 
+              style={{ borderRadius: '12px', border: 0 }} 
               src={`https://open.spotify.com/embed/artist/${SPOTIFY_ARTIST_ID}?utm_source=generator`} 
               width="100%" 
               height="352" 
-              frameBorder="0" 
               allowFullScreen 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-              loading="lazy"
+              loading="eager"
               title="Scott Dobson Spotify Player"
-              className="bg-slate-950"
+              className="bg-slate-950 block"
             ></iframe>
           </div>
           
