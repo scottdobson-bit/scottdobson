@@ -15,7 +15,7 @@ const Bio: React.FC = () => {
             <div className="relative group w-full max-w-md">
               <div className="absolute -inset-4 border-2 border-amber-500 opacity-20 transform translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
               <img 
-                src="https://picsum.photos/seed/scottbio/800/1000?grayscale" 
+                src="/profile.jpg" 
                 alt={ARTIST_NAME} 
                 className="relative w-full rounded shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 object-cover"
               />
