@@ -66,8 +66,8 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="text-slate-500 text-sm">
-              <p>Management: mgmt@scottdobsonmusic.com</p>
-              <p>Press: press@scottdobsonmusic.com</p>
+              <p>Management: mgmt@scottdobson.com</p>
+              <p>Press: press@scottdobson.com</p>
             </div>
           </div>
 

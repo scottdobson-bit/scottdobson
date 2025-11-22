@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Bio from './components/Bio';
 import Discography from './components/Discography';
-import Downloads from './components/Downloads';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Music } from 'lucide-react';
@@ -18,7 +17,6 @@ const App: React.FC = () => {
         <Hero />
         <Bio />
         <Discography />
-        <Downloads />
         <Contact />
       </main>
 
