@@ -15,7 +15,7 @@ const Bio: React.FC = () => {
               src="https://picsum.photos/seed/scottbio/600/800?grayscale" 
               alt={ARTIST_NAME} 
               loading="eager"
-              className="w-full max-w-md grayscale object-cover"
+              className="w-full max-w-md grayscale object-cover shadow-none border-none rounded-none"
             />
           </div>
           
