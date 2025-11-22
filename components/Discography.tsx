@@ -19,12 +19,13 @@ const Discography: React.FC = () => {
           <div className="bg-black/40 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden border border-slate-800 p-1">
             {/* 
                Spotify Artist Embed 
+               Using standard height (352px) and attributes to ensure 'encrypted-media' permission works.
             */}
             <iframe 
-              style={{ borderRadius: '10px' }} 
-              src={`https://open.spotify.com/embed/artist/${SPOTIFY_ARTIST_ID}?utm_source=generator&theme=0`} 
+              style={{ borderRadius: '12px' }} 
+              src={`https://open.spotify.com/embed/artist/${SPOTIFY_ARTIST_ID}?utm_source=generator`} 
               width="100%" 
-              height="480" 
+              height="352" 
               frameBorder="0" 
               allowFullScreen 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
