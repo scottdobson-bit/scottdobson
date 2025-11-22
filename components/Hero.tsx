@@ -33,8 +33,8 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Centering container */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+      {/* Centering container - Fixed using Flexbox for absolute centering */}
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center">
         {/* Animation container */}
         <a href="#about" className="block text-slate-400 hover:text-white transition-colors animate-bounce">
           <ChevronDown className="h-10 w-10" />

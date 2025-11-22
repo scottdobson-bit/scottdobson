@@ -17,6 +17,7 @@ const Bio: React.FC = () => {
               <img 
                 src="/profile.jpg" 
                 alt={ARTIST_NAME} 
+                loading="eager"
                 className="relative w-full rounded shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 object-cover"
               />
             </div>
