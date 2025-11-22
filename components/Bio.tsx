@@ -9,7 +9,7 @@ const Bio: React.FC = () => {
         <SectionTitle title="About The Artist" subtitle="Man & Machine" />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image Column - Simple, centered, grayscale image */}
+          {/* Image Column - Simple, centered, grayscale image without borders */}
           <div className="flex justify-center w-full">
             <img 
               src="https://picsum.photos/seed/scottbio/600/800?grayscale" 
