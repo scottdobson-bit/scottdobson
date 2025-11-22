@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ARTIST_NAME } from '../constants';
 import { ChevronDown } from 'lucide-react';
@@ -20,7 +21,7 @@ const Hero: React.FC = () => {
           {ARTIST_NAME.toUpperCase()}
         </h1>
         <p className="text-xl md:text-3xl text-amber-500 font-light tracking-widest mb-10 uppercase">
-          Composer . Performer . Visionary
+          Composer . Performer . Creator
         </p>
         <div className="flex justify-center gap-4">
           <a 
@@ -28,12 +29,6 @@ const Hero: React.FC = () => {
             className="px-8 py-3 border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-slate-900 transition-all duration-300 font-bold uppercase tracking-wider rounded-none"
           >
             Latest Music
-          </a>
-          <a 
-            href="#contact" 
-            className="px-8 py-3 bg-white text-slate-900 hover:bg-slate-200 transition-all duration-300 font-bold uppercase tracking-wider rounded-none"
-          >
-            Book Now
           </a>
         </div>
       </div>

@@ -1,6 +1,7 @@
+
 import React from 'react';
 import SectionTitle from './SectionTitle';
-import { SPOTIFY_ARTIST_ID } from '../constants';
+import { SPOTIFY_ARTIST_ID, APPLE_MUSIC_ARTIST_URL } from '../constants';
 import { ExternalLink, Music, ArrowRight } from 'lucide-react';
 
 const Discography: React.FC = () => {
@@ -44,26 +45,36 @@ const Discography: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-4">
                 <a 
                   href={`https://open.spotify.com/artist/${SPOTIFY_ARTIST_ID}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group"
+                  className="w-full bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group"
                 >
                   <Music className="h-5 w-5" />
                   <span>Listen on Spotify</span>
                   <ArrowRight className="h-4 w-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                </a>
+
+                <a 
+                  href={APPLE_MUSIC_ARTIST_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#FA233B] hover:bg-[#ff3650] text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group border border-transparent"
+                >
+                  <Music className="h-5 w-5" />
+                  <span>Listen on Apple Music</span>
                 </a>
                 
                 <a 
                   href="https://suno.com/@scootied"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 border border-slate-700"
+                  className="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 border border-slate-700"
                 >
                   <ExternalLink className="h-5 w-5" />
-                  <span>Suno AI Sketches</span>
+                  <span>Listen on Suno</span>
                 </a>
               </div>
 

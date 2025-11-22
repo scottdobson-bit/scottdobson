@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import SectionTitle from './SectionTitle';
-import { Send, CheckCircle, Instagram, Twitter, Youtube, Music, Globe, Mail } from 'lucide-react';
+import { Send, CheckCircle, Instagram, Twitter, Youtube, Music, Globe, Mail, Facebook } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
 const Contact: React.FC = () => {
@@ -26,6 +26,7 @@ const Contact: React.FC = () => {
       case 'spotify': return <Music className="h-5 w-5" />;
       case 'globe': return <Globe className="h-5 w-5" />;
       case 'mail': return <Mail className="h-5 w-5" />;
+      case 'facebook': return <Facebook className="h-5 w-5" />;
       default: return <Globe className="h-5 w-5" />;
     }
   };

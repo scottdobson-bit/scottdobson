@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -21,14 +22,6 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
-
-      {/* Floating Music Indicator (Decorative) */}
-      <div className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center gap-3 bg-slate-900/80 backdrop-blur p-3 rounded-full border border-slate-800 shadow-lg">
-         <div className="h-8 w-8 bg-amber-500 rounded-full flex items-center justify-center animate-pulse">
-           <Music className="h-4 w-4 text-slate-900" />
-         </div>
-         <span className="text-xs font-medium pr-2 text-slate-300">Now Streaming: Neon Rain</span>
-      </div>
     </div>
   );
 };

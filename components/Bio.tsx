@@ -12,8 +12,12 @@ const Bio: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative group">
             <div className="absolute -inset-4 border-2 border-amber-500 opacity-20 transform translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+            {/* 
+                IMPORTANT: Ensure the attached image is saved as 'profile.jpg' 
+                and placed in the public/ root folder of your web server.
+            */}
             <img 
-              src="https://picsum.photos/600/800?grayscale" 
+              src="/profile.jpg" 
               alt={ARTIST_NAME} 
               className="relative w-full rounded shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 object-cover"
             />
